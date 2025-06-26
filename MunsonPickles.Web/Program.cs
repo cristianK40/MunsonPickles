@@ -9,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 
-var sqlConnection = builder.Configuration["ConnectionStrings:Munson:SqlDb"];
+var sqlConnection = "Server=EXODUS40;Database=Test;User Id=sa;Password=123456;TrustServerCertificate=True;";
 
 builder.Services.AddSqlServer<PickleDbContext>(sqlConnection, options => options.EnableRetryOnFailure());
 
